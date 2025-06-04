@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIINMEDIA - Dari Jepara untuk DUNIA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+                        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDEsMjQxLDI0MSwxKSI+PC9yZWN0PjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSI+PC9yZWN0Pjwvc3ZnPg==');
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .project-tile {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .project-tile:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-overlay {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+            background: rgba(59, 130, 246, 0.85);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+        .tab-active {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-gray-800 flex items-center">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-2">
+                            <span class="text-white font-bold text-lg">SM</span>
+                        </div>
+                        SIIN<span class="text-blue-500">MEDIA</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-500 transition">Tentang</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-500 transition">Layanan</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-blue-500 transition">Portfolio</a>
+                    <a href="#characters" class="text-gray-700 hover:text-blue-500 transition">Karakter</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-500 transition">Kontak</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden py-3 space-y-2">
+                <a href="#about" class="block px-2 py-1 text-gray-700 hover:text-blue-500 transition">Tentang</a>
+                <a href="#services" class="block px-2 py-1 text-gray-700 hover:text-blue-500 transition">Layanan</a>
+                <a href="#portfolio" class="block px-2 py-1 text-gray-700 hover:text-blue-500 transition">Portfolio</a>
+                <a href="#characters" class="block px-2 py-1 text-gray-700 hover:text-blue-500 transition">Karakter</a>
+                <a href="#contact" class="block px-2 py-1 text-gray-700 hover:text-blue-500 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg pt-32 pb-20 px-4 md:px-0">
+        <div class="container mx-auto flex flex-col items-center text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Dari Jepara untuk DUNIA</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mb-8">Brand kreatif digital dari Jepara yang bantu UMKM, mahasiswa, dan kreator muda naik kelas secara online.</p>
+            
+            <div class="relative w-full max-w-3xl mb-12 hidden md:block">
+                <img src="https://svgur.com/i/y2K.svg" alt="Digital Illustration" class="w-full floating">
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#about" class="px-6 py-3 bg-blue-500 text-white rounded-full font-medium shadow-lg hover:bg-blue-600 transition duration-300 transform hover:-translate-y-1">
+                    Kenali Kami
+                </a>
+                <a href="#services" class="px-6 py-3 bg-white text-blue-500 border-2 border-blue-500 rounded-full font-medium shadow-lg hover:bg-blue-50 transition duration-300 transform hover:-translate-y-1">
+                    Lihat Unit Usaha
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">SIIN<span class="text-blue-500">MEDIA</span></h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        SIINMEDIA adalah agensi kreatif digital yang berangkat dari Jepara, dengan misi menghubungkan lokalitas dan teknologi. Kami hadir untuk bantu kamu dan bisnis kamu eksis secara digital, dengan pendekatan yang ringan, cerdas, dan berorientasi hasil.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-lightbulb text-yellow-500 text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Kreatif</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-globe text-blue-500 text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Global</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-heart text-green-500 text-xl"></i>
+                            </div>
+                            <span class="text-gray-700">Lokal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://svgur.com/i/y3t.svg" alt="Team Illustration" class="w-full max-w-lg">
+                        <img src="https://svgur.com/i/y2p.svg" alt="Maskot" class="absolute -bottom-10 -right-10 w-24 h-24 floating">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Unit Bisnis Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Produk dan layanan digital inovatif untuk memenuhi kebutuhan masyarakat modern di Jepara dan sekitarnya.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-400 flex items-center justify-center">
+                        <i class="fas fa-motorcycle text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">Transportasi Digital</div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-2 mb-2">TernoAE</h3>
+                        <p class="text-gray-600">
+                            Ojol lokal Jepara — murah, aman, dan ramah introver. Solusi transportasi tanpa drama untuk perjalanan Anda sehari-hari.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium inline-flex items-center">
+                                Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-yellow-500 to-yellow-400 flex items-center justify-center">
+                        <i class="fas fa-store text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-yellow-500 font-semibold">E-Commerce</div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-2 mb-2">Cah Jepara</h3>
+                        <p class="text-gray-600">
+                            Marketplace digital untuk produk-produk lokal berkualitas. Temukan dan dukung kreator lokal Jepara dalam satu platform.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-yellow-500 hover:text-yellow-600 font-medium inline-flex items-center">
+                                Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-400 flex items-center justify-center">
+                        <i class="fas fa-code text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-green-500 font-semibold">Pengembangan Digital</div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-2 mb-2">SIIN Programming</h3>
+                        <p class="text-gray-600">
+                            Tim dev lokal untuk kebutuhan website dan aplikasi. Dari landing page sederhana sampai sistem kompleks, kami siap membantu.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-green-500 hover:text-green-600 font-medium inline-flex items-center">
+                                Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Portofolio & Proyek Unggulan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Beberapa proyek terbaik yang telah kami kerjakan untuk berbagai klien dari berbagai sektor industri.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center mb-12 space-x-2">
+                <button onclick="filterProjects('all')" class="tab-button px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-blue-500 hover:text-white transition mb-2 md:mb-0 tab-active">
+                    Semua
+                </button>
+                <button onclick="filterProjects('web')" class="tab-button px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-blue-500 hover:text-white transition mb-2 md:mb-0">
+                    Website
+                </button>
+                <button onclick="filterProjects('app')" class="tab-button px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-blue-500 hover:text-white transition mb-2 md:mb-0">
+                    App
+                </button>
+                <button onclick="filterProjects('umkm')" class="tab-button px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-blue-500 hover:text-white transition mb-2 md:mb-0">
+                    UMKM
+                </button>
+                <button onclick="filterProjects('edu')" class="tab-button px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-blue-500 hover:text-white transition mb-2 md:mb-0">
+                    Edukasi
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 project-container">
+                <!-- Project 1 -->
+                <div class="project-tile bg-white rounded-xl shadow-md overflow-hidden relative web umkm" data-category="web,umkm">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Toko Roti" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-gray-800">Toko Roti Sari Mulyo</h3>
+                        <p class="text-gray-600">Website untuk toko roti tradisional Jepara</p>
+                    </div>
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center p-8 text-white">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold mb-2">Toko Roti Sari Mulyo</h3>
+                            <p class="mb-4">Website company profile untuk toko roti lokal dengan sistem pemesanan online</p>
+                            <a href="#" class="px-4 py-2 bg-white text-blue-500 rounded-full font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-tile bg-white rounded-xl shadow-md overflow-hidden relative app" data-category="app">
+                    <img src="https://images.unsplash.com/photo-1601146602381-6e3c2ef52461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Aplikasi Edukasi" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-gray-800">Jepara Heritage Guide</h3>
+                        <p class="text-gray-600">Aplikasi wisata budaya Jepara</p>
+                    </div>
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center p-8 text-white">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold mb-2">Jepara Heritage Guide</h3>
+                            <p class="mb-4">Aplikasi mobile untuk mengenal warisan budaya Jepara dengan fitur AR</p>
+                            <a href="#" class="px-4 py-2 bg-white text-blue-500 rounded-full font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-tile bg-white rounded-xl shadow-md overflow-hidden relative web edu" data-category="web,edu">
+                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Platform E-Learning" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-gray-800">Kursus Mebel Online</h3>
+                        <p class="text-gray-600">Platform e-learning untuk pengrajin mebel</p>
+                    </div>
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center p-8 text-white">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold mb-2">Kursus Mebel Online</h3>
+                            <p class="mb-4">Platform pembelajaran online untuk pengrajin mebel pemula</p>
+                            <a href="#" class="px-4 py-2 bg-white text-blue-500 rounded-full font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-tile bg-white rounded-xl shadow-md overflow-hidden relative umkm" data-category="umkm">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pemasaran UMKM" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-gray-800">Kampanye Kripik Sukun</h3>
+                        <p class="text-gray-600">Strategi pemasaran digital untuk UMKM</p>
+                    </div>
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center p-8 text-white">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold mb-2">Kampanye Kripik Sukun</h3>
+                            <p class="mb-4">Strategi pemasaran digital untuk produk olahan lokal</p>
+                            <a href="#" class="px-4 py-2 bg-white text-blue-500 rounded-full font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-tile bg-white rounded-xl shadow-md overflow-hidden relative app umkm" data-category="app,umkm">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Aplikasi UMKM" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-gray-800">Buku Jajan App</h3>
+                        <p class="text-gray-600">Aplikasi pembukuan sederhana untuk pedagang</p>
+                    </div>
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center p-8 text-white">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold mb-2">Buku Jajan App</h3>
+                            <p class="mb-4">Aplikasi pencatatan keuangan untuk pedagang kelontong</p>
+                            <a href="#" class="px-4 py-2 bg-white text-blue-500 rounded-full font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-tile bg-white rounded-xl shadow-md overflow-hidden relative web" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Web Berita" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-gray-800">Portal Berita Jepara</h3>
+                        <p class="text-gray-600">Situs berita lokal berbasis CMS</p>
+                    </div>
+                    <div class="project-overlay absolute inset-0 flex items-center justify-center p-8 text-white">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold mb-2">Portal Berita Jepara</h3>
+                            <p class="mb-4">Portal berita lokal dengan fitur kontribusi warga</p>
+                            <a href="#" class="px-4 py-2 bg-white text-blue-500 rounded-full font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-6 py-3 bg-blue-500 text-white rounded-full font-medium shadow-lg hover:bg-blue-600 transition inline-flex items-center">
+                    Lihat Semua Proyek <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="py-20 bg-gray-50 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Karakter SIINMEDIA</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Siapa yang menjalankan roda kreatif di balik SIINMEDIA? Ternyata mereka adalah...</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Character 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-36 h-36 mx-auto mb-4">
+                        <img src="https://svgur.com/i/y2_.svg" alt="Robot Terno" class="w-full h-full object-contain floating">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Robot Terno</h3>
+                    <p class="text-sm text-yellow-600 font-medium mb-3">Ahli Teknologi</p>
+                    <p class="text-gray-600">
+                        Pengembang utama yang memastikan semua sistem berjalan lancar. Selalu mengutamakan efisiensi dan presisi.
+                    </p>
+                </div>
+                
+                <!-- Character 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-36 h-36 mx-auto mb-4">
+                        <img src="https://svgur.com/i/y2T.svg" alt="Orang Tandon" class="w-full h-full object-contain floating" style="animation-delay: 0.2s">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Orang Tandon</h3>
+                    <p class="text-sm text-blue-600 font-medium mb-3">Strategi Digital</p>
+                    <p class="text-gray-600">
+                        Pemikir kreatif di balik strategi konten dan pemasaran. Memahami betul bagaimana membuat brand populer.
+                    </p>
+                </div>
+                
+                <!-- Character 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-36 h-36 mx-auto mb-4">
+                        <img src="https://svgur.com/i/y2U.svg" alt="Mas Bro" class="w-full h-full object-contain floating" style="animation-delay: 0.4s">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mas Bro</h3>
+                    <p class="text-sm text-green-600 font-medium mb-3">Relasi Masyarakat</p>
+                    <p class="text-gray-600">
+                        Wajah ramah yang menjadi penghubung antara SIINMEDIA dan masyarakat. Ahli dalam berkomunikasi dengan berbagai kalangan.
+                    </p>
+                </div>
+                
+                <!-- Character 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-36 h-36 mx-auto mb-4">
+                        <img src="https://svgur.com/i/y2Q.svg" alt="Mbak Yae" class="w-full h-full object-contain floating" style="animation-delay: 0.6s">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mbak Yae</h3>
+                    <p class="text-sm text-purple-600 font-medium mb-3">Desain Visual</p>
+                    <p class="text-gray-600">
+                        Penyihir visual yang mengubah ide-ide biasa menjadi desain menakjubkan. Selalu tahu warna dan bentuk yang tepat untuk setiap proyek.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gradient-to-r from-blue-500 to-blue-600">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-100 p-10 flex items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Punya ide kreatif atau butuh solusi digital?</h2>
+                            <p class="text-gray-600 mb-6">
+                                Kami siap bantu dari Jepara untuk Dunia. Hubungi kami melalui formulir ini atau langsung via kontak di bawah.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-phone-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600">Telepon/WA</p>
+                                        <a href="tel:+6281234567890" class="font-medium text-gray-800">0812-3456-7890</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-envelope text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600">Email</p>
+                                        <a href="mailto:hi@siinmedia.com" class="font-medium text-gray-800">hi@siinmedia.com</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                                            <i class="fab fa-instagram text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600">Instagram</p>
+                                        <a href="https://instagram.com/siimedia" class="font-medium text-gray-800" target="_blank">@siimedia</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-10">
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nama Anda">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="email@contoh.com">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Ceritakan kebutuhan Anda..."></textarea>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <button type="submit" class="w-full px-6 py-3 bg-blue-500 text-white rounded-full font-medium shadow-md hover:bg-blue-600 transition duration-300">
+                                    Kirim Pesan
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="text-2xl font-bold flex items-center">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-2">
+                            <span class="text-blue-500 font-bold text-lg">SM</span>
+                        </div>
+                        SIIN<span class="text-white">MEDIA</span>
+                    </a>
+                    <p class="mt-4 text-gray-300 text-sm">
+                        Brand kreatif digital yang berangkat dari Jepara, dengan misi menghubungkan lokalitas dan teknologi.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">Tentang</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Layanan</a></li>
+                        <li><a href="#portfolio" class="text-gray-300 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Unit Bisnis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">TernoAE</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Cah Jepara</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">SIIN Programming</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">Jepara, Jawa Tengah</li>
+                        <li class="text-gray-300">info@siinmedia.com</li>
+                        <li class="text-gray-300">+62 812 3456 7890</li>
+                        
+                        <div class="flex space-x-4 mt-3">
+                            <a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-500 transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-500 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 SIINMEDIA. Seluruh hak cipta dilindungi.</p>
+                <p class="mt-2">Dibuat dengan ♥ di Jepara untuk DUNIA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 w-12 h-12 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-3');
+            }
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after click
+                if (!this.classList.contains('no-close')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Project Filtering
+        function filterProjects(category) {
+            // Update active tab
+            const tabs = document.querySelectorAll('.tab-button');
+            tabs.forEach(tab => {
+                tab.classList.remove('tab-active');
+                tab.classList.remove('bg-blue-500');
+                tab.classList.remove('text-white');
+                tab.classList.add('border');
+                tab.classList.add('border-gray-300');
+                tab.classList.add('text-gray-700');
+            });
+            
+            // Add active class to clicked tab
+            const activeTab = document.querySelectorAll('.tab-button');
+            activeTab.forEach(tab => {
+                if (tab.textContent.trim().toLowerCase() === category || 
+                    (category === 'all' && tab.textContent.trim().toLowerCase() === 'semua')) {
+                    tab.classList.add('tab-active');
+                    tab.classList.remove('border');
+                    tab.classList.remove('border-gray-300');
+                    tab.classList.remove('text-gray-700');
+                }
+            });
+
+            // Filter projects
+            const projects = document.querySelectorAll('.project-tile');
+            projects.forEach(project => {
+                if (category === 'all' || project.dataset.category.includes(category)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

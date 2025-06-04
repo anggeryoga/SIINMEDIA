@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIINMEDIA - Agen Kreatif dari Jepara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', 'DM Sans', sans-serif;
+            background-color: #f8f8f5;
+            scroll-behavior: smooth;
+        }
+        
+        .neobrutal {
+            border: 2px solid #1a1a1a;
+            box-shadow: 6px 6px 0 #1a1a1a;
+            transition: all 0.2s ease;
+        }
+        
+        .neobrutal:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 #1a1a1a;
+        }
+        
+        .neobrutal-soft {
+            border: 2px solid #1a1a1a;
+            box-shadow: 4px 4px 0 #1a1a1a;
+            transition: all 0.2s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hero-pattern {
+            background-color: #f6f7ee;
+            background-image:  radial-gradient(#a3e0ff 1.4500000000000002px, transparent 1.4500000000000002px), radial-gradient(#a3e0ff 1.4500000000000002px, #f6f7ee 1.4500000000000002px);
+            background-size: 58px 58px;
+            background-position: 0 0,29px 29px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        .speech-bubble {
+            position: relative;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 3px 3px 0 #333;
+        }
+        
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: #fff transparent;
+            display: block;
+            width: 0;
+        }
+        
+        .speech-bubble:before {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 19px;
+            border-width: 11px 11px 0;
+            border-style: solid;
+            border-color: #333 transparent;
+            display: block;
+            width: 0;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white z-50 border-b-2 border-black shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold bg-yellow-300 px-3 py-1 neobrutal">SIINMEDIA</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="font-medium hover:text-yellow-500 transition">Tentang</a>
+                <a href="#services" class="font-medium hover:text-yellow-500 transition">Layanan</a>
+                <a href="#portfolio" class="font-medium hover:text-yellow-500 transition">Portofolio</a>
+                <a href="#characters" class="font-medium hover:text-yellow-500 transition">Karakter</a>
+                <a href="#contact" class="font-medium hover:text-yellow-500 transition">Kontak</a>
+            </div>
+            
+            <button class="md:hidden text-2xl" id="menuBtn">☰</button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-white w-full border-t-2 border-black hidden" id="mobileMenu">
+            <div class="flex flex-col py-3 px-4 space-y-3">
+                <a href="#about" class="font-medium py-2">Tentang</a>
+                <a href="#services" class="font-medium py-2">Layanan</a>
+                <a href="#portfolio" class="font-medium py-2">Portofolio</a>
+                <a href="#characters" class="font-medium py-2">Karakter</a>
+                <a href="#contact" class="font-medium py-2">Kontak</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen pt-24 pb-12 md:pt-32 px-4 hero-pattern flex items-center">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    <span class="block">Dari Jepara</span>
+                    <span class="block text-yellow-500 underline decoration-4 decoration-blue-400">untuk DUNIA</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-700 max-w-lg">
+                    Bersama SIINMEDIA, semua bisa go digital dari kota kecil ke pasar global.
+                </p>
+                <a href="#about" class="bg-blue-400 text-white px-8 py-3 rounded-full font-bold text-lg neobrutal hover:bg-blue-500 inline-block">
+                    Kenali SIINMEDIA
+                </a>
+            </div>
+            
+            <div class="md:w-1/2 relative">
+                <img src="https://illustrations.popsy.co/amber/designer-life.svg" alt="Hero Illustration" class="w-full max-w-xl mx-auto floating">
+                <img src="https://illustrations.popsy.co/amber/computer-login.svg" alt="Hero Illustration" class="absolute -bottom-10 -right-10 w-32 floating delay-1 hidden md:block">
+                <img src="https://illustrations.popsy.co/amber/smartphone-call.svg" alt="Hero Illustration" class="absolute -top-10 -left-10 w-32 floating delay-2 hidden md:block">
+                <img src="https://illustrations.popsy.co/amber/cloud-data.svg" alt="Hero Illustration" class="absolute top-1/2 left-0 w-24 floating delay-3 hidden md:block">
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-yellow-50">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <img src="https://illustrations.popsy.co/amber/innovative.svg" alt="About Illustration" class="w-full max-w-md mx-auto neobrutal-soft bg-white p-6">
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 flex items-center">
+                        <span class="bg-yellow-300 px-3 py-1 mr-3 neobrutal">SIINMEDIA</span>
+                        <span>Siapa Kami?</span>
+                    </h2>
+                    <p class="text-lg mb-6">
+                        SIINMEDIA adalah brand kreatif berbasis di Jepara yang fokus pada pengembangan produk digital dan solusi teknologi untuk UMKM, mahasiswa, dan kreator lokal.
+                    </p>
+                    <div class="bg-white p-6 neobrutal-soft mb-6">
+                        <h3 class="font-bold text-lg mb-2 text-blue-600">Visi Kami</h3>
+                        <p>Menjadi pusat inovasi digital yang membawa produk dan jasa lokal Jepara ke panggung global.</p>
+                    </div>
+                    <div class="bg-white p-6 neobrutal-soft">
+                        <h3 class="font-bold text-lg mb-2 text-blue-600">Misi Kami</h3>
+                        <p>Memberdayakan UMKM dan kreator lokal melalui solusi digital yang terjangkau, kreatif, dan berdampak besar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Unit Bisnis Kami
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-yellow-50 p-8 rounded-xl border-2 border-black neobrutal-soft card-hover transition-all duration-300">
+                    <div class="bg-white p-4 rounded-lg mb-6 neobrutal-soft text-center">
+                        <img src="https://illustrations.popsy.co/amber/street-food.svg" alt="TernoAE" class="h-40 mx-auto">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">TernoAE</h3>
+                    <p class="mb-6">Ojek Online Lokal Jepara yang ramah, aman, dan mendukung warga lokal.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Ojol Lokal</span>
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Lihat Detail →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-green-50 p-8 rounded-xl border-2 border-black neobrutal-soft card-hover transition-all duration-300">
+                    <div class="bg-white p-4 rounded-lg mb-6 neobrutal-soft text-center">
+                        <img src="https://illustrations.popsy.co/amber/loving-it.svg" alt="Cah Jepara" class="h-40 mx-auto">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-600">Cah Jepara</h3>
+                    <p class="mb-6">Marketplace produk lokal Jepara, dukung karya asli dan ekonomi daerah.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">E-Commerce</span>
+                        <a href="#" class="text-green-600 font-medium hover:underline">Lihat Detail →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-blue-50 p-8 rounded-xl border-2 border-black neobrutal-soft card-hover transition-all duration-300">
+                    <div class="bg-white p-4 rounded-lg mb-6 neobrutal-soft text-center">
+                        <img src="https://illustrations.popsy.co/amber/web-development.svg" alt="SIIN Programming" class="h-40 mx-auto">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-500">SIIN Programming</h3>
+                    <p class="mb-6">Tim pengembangan web dan aplikasi yang membuat bisnismu semakin digital.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Web Dev</span>
+                        <a href="#" class="text-yellow-600 font-medium hover:underline">Lihat Detail →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Portofolio & Hasil Kerja
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-black neobrutal-soft overflow-hidden card-hover transition-all duration-300">
+                    <img src="https://illustrations.popsy.co/amber/responsive-website.svg" alt="Portfolio 1" class="w-full mb-4">
+                    <h3 class="text-xl font-bold mb-2">Website UMKM Jepara</h3>
+                    <p class="text-gray-600 mb-4">Website katalog online untuk UMKM kerajinan kayu Jepara.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">SIIN Programming</span>
+                        <div class="flex">
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-black neobrutal-soft overflow-hidden card-hover transition-all duration-300">
+                    <img src="https://illustrations.popsy.co/amber/online-shopping.svg" alt="Portfolio 2" class="w-full mb-4">
+                    <h3 class="text-xl font-bold mb-2">Cah Jepara Marketplace</h3>
+                    <p class="text-gray-600 mb-4">Platform e-commerce untuk produk lokal Jepara.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Cah Jepara</span>
+                        <div class="flex">
+                            <span class="text-yellow-500">★★★★☆</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-black neobrutal-soft overflow-hidden card-hover transition-all duration-300">
+                    <img src="https://illustrations.popsy.co/amber/delivery.svg" alt="Portfolio 3" class="w-full mb-4">
+                    <h3 class="text-xl font-bold mb-2">App TernoAE</h3>
+                    <p class="text-gray-600 mb-4">Aplikasi ojek online khusus wilayah Jepara.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">TernoAE</span>
+                        <div class="flex">
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">Apa Kata Mereka?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl border-2 border-black neobrutal-soft">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center mr-4 font-bold">A</div>
+                            <div>
+                                <h4 class="font-bold">Amirullah</h4>
+                                <p class="text-sm text-gray-500">Pemilik UMKM Kerajinan</p>
+                            </div>
+                        </div>
+                        <p>"Berhasil meningkatkan penjualan kami 3x lipat setelah buka toko online di Cah Jepara."</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border-2 border-black neobrutal-soft">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-300 rounded-full flex items-center justify-center mr-4 font-bold">D</div>
+                            <div>
+                                <h4 class="font-bold">Dinda</h4>
+                                <p class="text-sm text-gray-500">Mahasiswa UDINUS</p>
+                            </div>
+                        </div>
+                        <p>"Driver TernoAE sangat ramah dan tahu jalan-jalan kecil di Jepara. Recommended!"</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border-2 border-black neobrutal-soft">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-300 rounded-full flex items-center justify-center mr-4 font-bold">R</div>
+                            <div>
+                                <h4 class="font-bold">Rohman</h4>
+                                <p class="text-sm text-gray-500">Karyawan Swasta</p>
+                            </div>
+                        </div>
+                        <p>"Website yang dibuat SIIN Programming sangat profesional dengan harga terjangkau."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Characters Section -->
+    <section id="characters" class="py-16 px-4 bg-yellow-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Keluarga SIINMEDIA
+            </h2>
+            
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Character 1 -->
+                <div class="w-full md:w-1/3 lg:w-1/4 mb-8">
+                    <div class="bg-white p-6 neobrutal-soft text-center relative h-full">
+                        <img src="https://illustrations.popsy.co/amber/robot.svg" alt="Robot Terno" class="w-40 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Robot Terno</h3>
+                        <p class="text-gray-700">AI mascot kami yang selalu siap membantu masalah teknis.</p>
+                        <div class="speech-bubble absolute -top-4 left-1/2 transform -translate-x-1/2 w-4/5">
+                            "Ada yang bisa saya bantu?"
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Character 2 -->
+                <div class="w-full md:w-1/3 lg:w-1/4 mb-8">
+                    <div class="bg-white p-6 neobrutal-soft text-center relative h-full">
+                        <img src="https://illustrations.popsy.co/amber/farmer.svg" alt="Orang Tandon" class="w-40 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Pak Tandon</h3>
+                        <p class="text-gray-700">Ikon lokal khas Jepara yang mewakili sisi tradisional kami.</p>
+                        <div class="speech-bubble absolute -top-4 left-1/2 transform -translate-x-1/2 w-4/5">
+                            "Tradisi ojo ilang yen wis modern!"
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Character 3 -->
+                <div class="w-full md:w-1/3 lg:w-1/4 mb-8">
+                    <div class="bg-white p-6 neobrutal-soft text-center relative h-full">
+                        <img src="https://illustrations.popsy.co/amber/young-man.svg" alt="Mas Bro" class="w-40 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Mas Bro</h3>
+                        <p class="text-gray-700">Driver TernoAE paling friendly dan tahu semua jalan di Jepara.</p>
+                        <div class="speech-bubble absolute -top-4 left-1/2 transform -translate-x-1/2 w-4/5">
+                            "Ayo jalan-jalan keliling Jepara!"
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Character 4 -->
+                <div class="w-full md:w-1/3 lg:w-1/4 mb-8">
+                    <div class="bg-white p-6 neobrutal-soft text-center relative h-full">
+                        <img src="https://illustrations.popsy.co/amber/coding.svg" alt="Mbak Dev" class="w-40 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Mbak Dev</h3>
+                        <p class="text-gray-700">Developer handal SIIN Programming yang kreatif dan detail.</p>
+                        <div class="speech-bubble absolute -top-4 left-1/2 transform -translate-x-1/2 w-4/5">
+                            "Websitemu bakal keren banget!"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-blue-400 text-white">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Mau Kerja Bareng Kami?</h2>
+                <p class="text-xl mb-8">Kami selalu senang mendengar ide-ide baru dan peluang kolaborasi!</p>
+                
+                <div class="flex flex-wrap justify-center gap-6 mb-12">
+                    <a href="https://wa.me/6281234567890" class="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center neobrutal">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.479 5.092 1.479h.005c5.254 0 9.524-4.266 9.522-9.517-.002-5.266-4.291-9.551-9.556-9.551-5.248 0-9.52 4.266-9.519 9.518.001 2.139.665 4.19 1.914 5.945l-.989 3.637 3.728-.98zm-.553-6.403l-.07-.05-.056.04-.027.043c-.191.332-.431.737-.477.789-.076.098-.153.195-.153.195-.132.168-.263.168-.473.056-.21-.112-.813-.317-1.564-1.003-.566-.52-.988-1.156-1.109-1.357-.123-.199-.02-.305.097-.405.098-.088.213-.211.32-.32.098-.103.132-.172.198-.277.065-.121.034-.184-.015-.277-.041-.084-.367-1.007-.502-1.36-.063-.167-.133-.145-.186-.148-.052-.002-.111-.01-.169-.01-.057-.001-.119.009-.178.015-.097.009-.227.033-.356.155-.125.118-.484.475-.484 1.155s.493 1.343.56 1.435c.066.092.938 1.472 2.317 2.119 1.379.647 1.379.43 1.634.403.254-.027.843-.347.96-.657.117-.309.117-.573.082-.657-.035-.084-.133-.144-.276-.232" fill-rule="evenodd"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                    
+                    <a href="mailto:hello@siinmedia.com" class="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center neobrutal">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                        </svg>
+                        Email Kami
+                    </a>
+                    
+                    <a href="https://instagram.com/siinmediajepara" class="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center neobrutal">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Instagram
+                    </a>
+                </div>
+                
+                <div class="flex justify-center gap-4">
+                    <a href="#portfolio" class="bg-yellow-300 text-black px-6 py-3 rounded-full font-bold neobrutal hover:bg-yellow-400 inline-block">
+                        Lihat Portofolio
+                    </a>
+                    
+                    <a href="https://wa.me/6281234567890" class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold neobrutal hover:bg-gray-100 inline-block">
+                        Konsultasi Gratis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-gray-800 py-8 px-4 border-t-2 border-black">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold bg-yellow-300 px-3 py-1 neobrutal mr-2">SIINMEDIA</span>
+                    <p class="mt-2 text-sm">Jepara, Indonesia</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+                    <a href="#about" class="text-sm hover:underline">Tentang</a>
+                    <a href="#services" class="text-sm hover:underline">Layanan</a>
+                    <a href="#portfolio" class="text-sm hover:underline">Portofolio</a>
+                    <a href="#contact" class="text-sm hover:underline">Kontak</a>
+                    <a href="#" class="text-sm hover:underline">Kebijakan Privasi</a>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center neobrutal-soft">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center neobrutal-soft">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14.829 6.302c-.738-.034-.96.04-1.26.134-.306.099-.567.25-.756.437-.328.341-.522.761-.586 1.115-.042.256.04.589.108.741.058.102.44 1.108.58 1.487.054.142.11.312.154.43.031.086.066.166.116.237.14.192.423.465.729.648.228.143.696.373 1.11.492.183.052.368.082.562.082.559-.01.955-.193 1.318-.539.408-.383.494-1 .274-1.52-.155-.359-.611-.727-1.613-1.247-.728-.381-1.003-.61-1.158-.8-.16-.196-.179-.372-.112-.538.088-.224.388-.4.704-.457.195-.034.408-.028.669.039.466.119.76.351 1.48.801.144.09.279.16.403.197.189.058.494.084.61-.063.123-.16.293-.6.353-.822.064-.237.086-.425.047-.62-.057-.29-.268-.54-.822-.693-.332-.092-1.02-.15-1.58-.131zm-9.396 1.43c.03 1.116.212 3.065 1.215 5.019.959 1.854 2.608 3.381 4.13 4.115.789.375 1.699.754 2.738.808.728.038 1.538-.093 2.367-.28 1.274-.293 2.758-1.055 2.758-1.055l-.081-.184s-.555.31-1.138.555c-.42.19-.9.369-1.373.478-.82.184-1.606.222-2.19.074-.446-.117-.942-.413-1.378-.737-1.285-.935-2.455-2.883-3.202-4.917-.613-1.671-.81-3.363-.747-4.71.021-.525.101-.983.224-1.359l.156-.021s-1.038.134-.154.818c.276.216.507.512.561.73zm16.567-.33v10.644c0 .736-.597 1.333-1.333 1.333h-10.666c-.736 0-1.334-.597-1.334-1.333v-10.664c0-.737.598-1.334 1.334-1.334h10.666c.736 0 1.333.597 1.333 1.334zm-5-.334h-6c-.276 0-.5.224-.5.5s.224.5.5.5h6c.276 0 .5-.224.5-.5s-.224-.5-.5-.5z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center neobrutal-soft">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-400 mt-8 pt-8 text-center text-sm">
+                <p>© 2023 SIINMEDIA. Semua hak dilindungi.</p>
+                <p class="mt-2">Dibuat dengan ❤️ di Jepara, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

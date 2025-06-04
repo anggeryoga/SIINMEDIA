@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIINMEDIA - Creative Gen-Z Agency Jepara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b6a3d1fb61.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fef9f5;
+            scroll-behavior: smooth;
+        }
+        
+        .glass-card {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+        }
+        
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+        }
+        
+        .testimonial-bubble {
+            position: relative;
+        }
+        
+        .testimonial-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20%;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid rgba(212, 242, 247, 0.7);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold rounded-full bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent">
+                        SIINMEDIA
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="font-medium text-gray-600 hover:text-gray-900 transition">Home</a>
+                    <a href="#about" class="font-medium text-gray-600 hover:text-gray-900 transition">About</a>
+                    <a href="#services" class="font-medium text-gray-600 hover:text-gray-900 transition">Services</a>
+                    <a href="#portfolio" class="font-medium text-gray-600 hover:text-gray-900 transition">Portfolio</a>
+                    <a href="#contact" class="font-medium text-gray-600 hover:text-gray-900 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
+            <a href="#home" class="block py-2 font-medium">Home</a>
+            <a href="#about" class="block py-2 font-medium">About</a>
+            <a href="#services" class="block py-2 font-medium">Services</a>
+            <a href="#portfolio" class="block py-2 font-medium">Portfolio</a>
+            <a href="#contact" class="block py-2 font-medium">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, rgba(255,215,237,0.4) 0%, rgba(216,243,255,0.4) 100%);">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight mb-6">
+                        <span class="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">From Jepara,</span> 
+                        <br>For The World
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-10 max-w-lg">
+                        Agensi Gen-Z dengan karya penuh hati dan estetika. Kami menghadirkan solusi kreatif yang segar untuk merek-merek progresif.
+                    </p>
+                    <a href="#contact" class="inline-block px-10 py-4 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 text-white font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">
+                        Mulai Proyekmu ✨
+                    </a>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="w-full h-96 rounded-3xl overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="SIINMEDIA Team" 
+                             class="w-full h-full object-cover rounded-3xl">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/30 rounded-3xl"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-pink-200/50 blur-xl"></div>
+                    <div class="absolute -top-6 -right-6 w-40 h-40 rounded-full bg-blue-200/50 blur-xl"></div>
+                    <div class="floating absolute -right-6 top-1/4 bg-white/70 p-4 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-blue-400"></div>
+                            <div class="text-sm font-medium">
+                                <p>Happy Clients</p>
+                                <p class="text-pink-500">50+ Projek</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 rounded-3xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884974?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Creative Team" 
+                         class="w-full rounded-3xl shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-8">
+                        <span class="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Kami bantu kamu tampil</span><br>
+                        <span class="text-gray-800">keren, soft, dan standout</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        SIINMEDIA lahir dari semangat anak muda Jepara yang ingin membawa kreativitas lokal ke panggung dunia. Kami adalah kolektif desainer, developer, dan content creator yang percaya pada kekuatan desain yang humanis.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-pink-400"></div>
+                            </div>
+                            <p class="ml-3 text-gray-600">
+                                <span class="font-bold">2019</span> - Ternoda berdiri dengan semangat menyuarakan Jepara
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-blue-400"></div>
+                            </div>
+                            <p class="ml-3 text-gray-600">
+                                <span class="font-bold">2021</span> - Ekspansi ke layanan digital dengan SIIN Programming
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-yellow-400"></div>
+                            </div>
+                            <p class="ml-3 text-gray-600">
+                                <span class="font-bold">2023</span> - Bergabung sebagai SIINMEDIA dengan visi lebih besar
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#services" class="px-6 py-3 rounded-full border-2 border-pink-300 text-pink-500 font-medium hover:bg-pink-50 transition">
+                            Lihat Layanan
+                        </a>
+                        <a href="#portfolio" class="px-6 py-3 rounded-full bg-gradient-to-r from-pink-300 to-blue-300 text-white font-medium hover:shadow-md transition">
+                            Portofolio Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Units -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, rgba(234,253,249,0.8) 0%, rgba(247,235,255,0.8) 100%);">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Unit Bisnis Kami</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-2">
+                    <div class="w-20 h-20 rounded-2xl bg-pink-200 flex items-center justify-center mb-6">
+                        <i class="fas fa-newspaper text-3xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Cah Jepara</h3>
+                    <p class="text-gray-600 mb-6">
+                        Media kreatif yang membahas isu lokal Jepara dengan sudut pandang fresh anak muda. Konten informatif disajikan dengan visual yang eye-catching.
+                    </p>
+                    <a href="#" class="text-pink-500 font-medium inline-flex items-center">
+                        Jelajahi
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-2">
+                    <div class="w-20 h-20 rounded-2xl bg-blue-200 flex items-center justify-center mb-6">
+                        <i class="fas fa-motorcycle text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">TernoAE</h3>
+                    <p class="text-gray-600 mb-6">
+                        Solusi transportasi cepat khusus anak kos, mahasiswa dan warga Jepara. Dikerjakan oleh pengemudi terlatih dengan pelayanan ramah.
+                    </p>
+                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">
+                        Jelajahi
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-2">
+                    <div class="w-20 h-20 rounded-2xl bg-yellow-200 flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">SIIN Programming</h3>
+                    <p class="text-gray-600 mb-6">
+                        Jasa development website & aplikasi custom untuk bisnis lokal. Visi kami membuat teknologi digital terjangkau bagi UMKM di Jepara.
+                    </p>
+                    <a href="#" class="text-yellow-500 font-medium inline-flex items-center">
+                        Jelajahi
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-5">
+                <span class="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Layanan Kreatif</span>
+            </h2>
+            <p class="text-xl text-gray-500 text-center mb-16 max-w-2xl mx-auto">
+                Berbagai solusi kreatif yang bisa kami tawarkan untuk membangun merek Anda
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-3xl shadow-sm hover:shadow-md transition-all" style="background-color: rgba(236, 253, 245, 0.5);">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-palette text-2xl text-green-500"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Branding & Identity</h3>
+                            <p class="text-gray-600 mb-4">
+                                Kami membantu membangun identitas merek yang kuat mulai dari logo, warna, tipografi hingga gaya visual yang konsisten.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-600 text-sm">Logo Design</span>
+                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-600 text-sm">Brand Guideline</span>
+                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-600 text-sm">Visual Identity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="p-8 rounded-3xl shadow-sm hover:shadow-md transition-all" style="background-color: rgba(250, 245, 255, 0.5);">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center">
+                                <i class="fas fa-laptop-code text-2xl text-purple-500"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Web & App Development</h3>
+                            <p class="text-gray-600 mb-4">
+                                Pembuatan website dan aplikasi mobile custom, responsif, dengan fokus pada user experience yang menyenangkan.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-sm">Website</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-sm">Mobile App</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-sm">Landing Page</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-sm">E-commerce</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="p-8 rounded-3xl shadow-sm hover:shadow-md transition-all" style="background-color: rgba(254, 242, 242, 0.5);">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center">
+                                <i class="fas fa-camera-retro text-2xl text-red-500"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Social Media Content</h3>
+                            <p class="text-gray-600 mb-4">
+                                Konten kreatif untuk media sosial yang sesuai dengan kepribadian merek Anda dan relevan dengan target audience.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-sm">Photo</span>
+                                <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-sm">Video</span>
+                                <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-sm">Social Media</span>
+                                <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-sm">Content Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="p-8 rounded-3xl shadow-sm hover:shadow-md transition-all" style="background-color: rgba(238, 242, 255, 0.5);">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-film text-2xl text-blue-500"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Motion Design</h3>
+                            <p class="text-gray-600 mb-4">
+                                Animasi dan video pendek untuk promosi produk, company profile, atau konten social media yang eye-catching.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-600 text-sm">2D Animation</span>
+                                <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-600 text-sm">Explainer Video</span>
+                                <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-600 text-sm">Promo Video</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#contact" class="inline-block px-8 py-3 rounded-full border-2 border-pink-300 text-pink-500 font-medium hover:bg-pink-50 transition">
+                    Butuh solusi khusus? Yuk ngobrol dulu~
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, rgba(255,241,235,0.7) 0%, rgba(234,249,255,0.7) 100%);">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-5">
+                <span class="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Portofolio Highlight</span>
+            </h2>
+            <p class="text-xl text-gray-500 text-center mb-16 max-w-2xl mx-auto">
+                Beberapa proyek yang telah kami kerjakan untuk klien terbaik kami
+            </p>
+            
+            <div class="relative">
+                <div id="portfolio-slider" class="flex overflow-x-auto pb-10 gap-6 snap-x snap-mandatory scroll-smooth" style="scrollbar-width: none;">
+                    <!-- Portfolio Item 1 -->
+                    <div class="portfolio-item flex-shrink-0 w-80 snap-center">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                            <div class="h-56 bg-gradient-to-r from-green-200 to-blue-200 flex items-center justify-center relative">
+                                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                                     alt="Project 1" 
+                                     class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="px-3 py-1 rounded-full bg-white text-green-600 text-sm font-medium">Branding</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Ekspektasi Apparel</h3>
+                                <p class="text-gray-600 mb-4">Brand lokal dengan konsep streetwear minimalis</p>
+                                <a href="#" class="text-pink-500 font-medium flex items-center">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 2 -->
+                    <div class="portfolio-item flex-shrink-0 w-80 snap-center">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                            <div class="h-56 bg-gradient-to-r from-blue-200 to-purple-200 flex items-center justify-center relative">
+                                <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Project 2" 
+                                     class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="px-3 py-1 rounded-full bg-white text-blue-600 text-sm font-medium">Web Design</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Kopi Kulo</h3>
+                                <p class="text-gray-600 mb-4">Website untuk kedai kopi berbasis di Jepara</p>
+                                <a href="#" class="text-pink-500 font-medium flex items-center">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 3 -->
+                    <div class="portfolio-item flex-shrink-0 w-80 snap-center">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                            <div class="h-56 bg-gradient-to-r from-pink-200 to-red-200 flex items-center justify-center relative">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Project 3" 
+                                     class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="px-3 py-1 rounded-full bg-white text-pink-600 text-sm font-medium">Social Media</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Rumah Idaman Real Estate</h3>
+                                <p class="text-gray-600 mb-4">Strategi konten marketing untuk properti</p>
+                                <a href="#" class="text-pink-500 font-medium flex items-center">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 4 -->
+                    <div class="portfolio-item flex-shrink-0 w-80 snap-center">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                            <div class="h-56 bg-gradient-to-r from-yellow-200 to-orange-200 flex items-center justify-center relative">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Project 4" 
+                                     class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="px-3 py-1 rounded-full bg-white text-orange-600 text-sm font-medium">Mobile App</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Aplikasi Rantangin</h3>
+                                <p class="text-gray-600 mb-4">Food delivery untuk bisnis rumahan</p>
+                                <a href="#" class="text-pink-500 font-medium flex items-center">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="portfolio-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-600 hover:bg-gray-100 transition z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="portfolio-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-600 hover:bg-gray-100 transition z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Dari Mereka yang Sudah Bekerja Sama</span>
+            </h2>
+            
+            <div class="testimonial-bubble p-8 rounded-3xl mb-12" style="background-color: rgba(212, 242, 247, 0.7);">
+                <div class="flex items-center mb-6">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" 
+                         alt="Client 1" 
+                         class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-sm">
+                    <div class="ml-4">
+                        <h4 class="font-bold text-lg">Nadia Puteri</h4>
+                        <p class="text-blue-600">Owner Ekspektasi Apparel</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic text-lg">
+                    "SIINMEDIA benar-benar memahami visi kami. Branding yang mereka buat tidak hanya keren secara visual tapi juga menyampaikan cerita di balik brand kami. Komunikasi lancar dan hasilnya melebihi ekspektasi!"
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-bubble p-6 rounded-3xl" style="background-color: rgba(246, 224, 253, 0.7);">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" 
+                             alt="Client 2" 
+                             class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm">
+                        <div class="ml-3">
+                            <h4 class="font-bold">Ahmad Fajar</h4>
+                            <p class="text-purple-500 text-sm">Kopi Kulo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Website buatan mereka meningkatkan 3x lebih banyak customer yang datang ke kedai kami. Desainnya simple tapi powerful!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-bubble p-6 rounded-3xl" style="background-color: rgba(254, 243, 199, 0.7);">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" 
+                             alt="Client 3" 
+                             class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm">
+                        <div class="ml-3">
+                            <h4 class="font-bold">Dian Ratnasari</h4>
+                            <p class="text-yellow-600 text-sm">Rumah Idaman</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Strategi konten dari SIINMEDia membantu meningkatkan engagement Instagram kami secara signifikan. Kontennya selalu fresh dan relevan."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, rgba(221,245,255,0.8) 0%, rgba(255,220,245,0.8) 100%);">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="glass-card p-12 rounded-3xl overflow-hidden relative">
+                <div class="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-pink-300 blur-xl opacity-40"></div>
+                <div class="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-blue-300 blur-xl opacity-40"></div>
+                
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Kita bisa mulai dari mana aja,</span>
+                    <br>yang penting mulai dulu~
+                </h2>
+                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                    Yuk diskusikan ide proyek Anda dengan tim kreatif kami. Respons cepat dalam 1x24 jam.
+                </p>
+                <a href="https://wa.me/6281234567890" 
+                   class="inline-block px-12 py-5 rounded-full bg-gradient-to-r from-green-400 to-blue-400 text-white font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 mb-4">
+                    <i class="fab fa-whatsapp mr-2"></i> Chat via WhatsApp
+                </a>
+                <p class="text-gray-500">
+                    atau email ke <a href="mailto:hello@siinmedia.com" class="text-pink-500 underline">hello@siinmedia.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="text-2xl font-bold rounded-full bg-gradient-to-r from-pink-300 to-blue-300 bg-clip-text text-transparent">
+                        SIINMEDIA
+                    </a>
+                    <p class="text-gray-500 mt-2 max-w-sm">
+                        Agen kreatif Gen-Z dari Jepara untuk dunia. Membantu UMKM, mahasiswa, dan kreator konten tampil keren secara digital.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-4">Layanan</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-600 hover:text-pink-500 transition">Branding</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-pink-500 transition">Web Development</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-pink-500 transition">Content Creation</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-pink-500 transition">Motion Design</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-4">Perusahaan</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-600 hover:text-pink-500 transition">Tentang Kami</a></li>
+                            <li><a href="#portfolio" class="text-gray-600 hover:text-pink-500 transition">Portofolio</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-pink-500 transition">Blog</a></li>
+                            <li><a href="#contact" class="text-gray-600 hover:text-pink-500 transition">Kontak</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-4">Terhubung</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 hover:bg-pink-200 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 hover:bg-blue-200 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 hover:bg-green-200 transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 hover:bg-yellow-200 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-100 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 SIINMEDIA. From Jepara, For The World. ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Portfolio slider
+        const slider = document.getElementById('portfolio-slider');
+        const prevBtn = document.getElementById('portfolio-prev');
+        const nextBtn = document.getElementById('portfolio-next');
+        let scrollAmount = 0;
+        const scrollStep = 300;
+        
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({
+                left: -scrollStep,
+                behavior: 'smooth'
+            });
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({
+                left: scrollStep,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
